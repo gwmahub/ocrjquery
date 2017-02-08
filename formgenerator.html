@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link type="text/css" rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <title>Title</title>
+    </head>
+    <body>
+    <header class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
+                <h1>Simplifiez vos développements JavaScript avec jQuery !</h1>
+            </div>
+        </div>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
+                        <span class="sr-only"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand">JQUERY</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" >
+                                Travaux pratiques<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="tp_mefpageweb.html">Mise en forme d'une page web</a></li>
+                                <li><a href="carsgame.html">Jeux de voiture</a></li>
+                                <li><a href="chat.html">Chat avec Ajax</a></li>
+                                <li><a href="tp_widetext.html">Redimensionnez du texte avec le plugin WideText </a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Activités<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="formgenerator.html">Activité - générateur de formulaire</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="animate.html">Animations</a></li>
+                        <li><a href="proverbes.html">Ajax - proverbes</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div id="form-generator-mainblock" class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
+                <div id="gauche"></div>
+                <div id="droite">
+                    <p id="instructions"> Utilisez ces boutons pour créer votre formulaire</p>
+                    <button id="btnLabel">Label</button>
+                    <button id="btnGiveIdAndName">Zone de texte</button>
+                    <button id="btnButton">Bouton</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container">
+        <div class="row well">
+            <div class="col-sm-12 col-md-12">
+                <p class="text-center">Site réalisé pour le cours de jQuery de Openclassroom</p>
+            </div>
+        </div>
+    </footer>
+    <script src="vendor/jquery/dist/jquery.js"></script>
+    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>-->
+    <script src="js/formGenerator.js"></script>
+    <script src="js/jQuery.wideText.js"></script>
+    <script>
+        $(function(){
+            $(window).load( function() {
+                $( '#instructions' ).wideText();
+            } );
+        });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Mise en forme</title>
+        <link type="text/css" rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css" />
+
+        <style type="text/css">
+            #contenu
+            {
+                width: 500px;
+                height: 450px;
+                border: 1px black solid;
+                float: left;
+                margin-right: 10px;
+                overflow-y: auto;
+            }
+            #controles
+            {
+                width: 300px;
+                height: 450px;
+                border: 1px black solid;
+                float: left;
+            }
+            #controles div{
+                margin-bottom: 10px;
+                padding: 5px;
+            }
+            label{
+                float: left;
+                width: 140px;
+            }
+            #image
+            {
+                width: 110px;
+                height: 110px;
+                margin-left: 100px;
+            }
+            p
+            {
+                padding-left: 5px;
+                padding-right: 5px;
+                font-family: 'Times New Roman';
+            }
+        </style>
+    </head>
+    <body>
+    <header class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
+                <h1>Simplifiez vos développements JavaScript avec jQuery !</h1>
+            </div>
+        </div>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
+                        <span class="sr-only"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand">JQUERY</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" >
+                                Travaux pratiques<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="tp_mefpageweb.html">Mise en forme d'une page web</a></li>
+                                <li><a href="carsgame.html">Jeux de voiture</a></li>
+                                <li><a href="chat.html">Chat avec Ajax</a></li>
+                                <li><a href="tp_widetext.html">Redimensionnez du texte avec le plugin WideText </a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Activités<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="formgenerator.html">Activité - générateur de formulaire</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="animate.html">Animations</a></li>
+                        <li><a href="proverbes.html">Ajax - proverbes</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
+                <div id="contenu">
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. </p>
+                    <div id="image"><img src="assets/zozor.png"></div>
+                    <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. </p>
+                    <p>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. </p>
+                </div>
+                <div id="controles">
+                    <div>
+                        <label for="couleur-fond">Couleur de fond</label>
+                        <select id="couleur-fond">
+                            <option value="#FFFFFF">Blanc</option>
+                            <option value="#9FFEF1">Bleu</option>
+                            <option value="#9FFECE">Vert</option>
+                            <option value="#FAFE9F">Jaune</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="texte">Texte</label>
+                        <select id="texte">
+                            <option value="Normal">Normal</option>
+                            <option value="Gras">Gras</option>
+                            <option value="Italique">Italique</option>
+                            <option value="Souligne">Souligné</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="police">Police</label>
+                        <select id="police">
+                            <option value="Times New Roman">Times New Roman</option>
+                            <option value="Courier New">Courier New</option>
+                            <option value="Arial">Arial</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="police-prem-phrase">Police 1e phrase</label>
+                        <select id="police-prem-phrase">
+                            <option value="Times New Roman">Times New Roman</option>
+                            <option value="Courier New">Courier New</option>
+                            <option value="Arial">Arial</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="prem-car-phrases">Prem caract phrases</label>
+                        <select id="prem-car-phrases">
+                            <option value="Normal">Normal</option>
+                            <option value="Gras">Gras</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="mot">Mot en rouge</label>
+                        <input type="text" id="mot" size="2">
+                        <button id="couleurMot">OK</button>
+                    </div>
+
+                    <div>
+                        <label for="bordure-images">Bordure images</label>
+                        <select id="bordure-images">
+                            <option value="Rien">Rien</option>
+                            <option value="Simple">Simple</option>
+                            <option value="Double">Double</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <button id="raz">RAZ formulaire</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <footer class="container">
+        <div class="row well">
+            <div class="col-sm-12 col-md-12">
+                <p class="text-center">Site réalisé pour le cours de jQuery de Openclassroom</p>
+            </div>
+        </div>
+    </footer>
+    <script src="vendor/jquery/dist/jquery.js"></script>
+    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(function(){
+        // Changement de couleur de fond
+            $('#couleur-fond').change(function(){
+                $('#contenu').css('background-color', $('#couleur-fond :selected').val());
+            });
+        // Changement style de texte
+            $('#texte').change(function(){
+                if($('#texte option:selected').val() === "Gras"){
+                    $('#contenu p').css('font-weight', 'bolder');
+                }else if($('#texte option:selected').val() === "Italique"){
+                    $('#contenu p').css('font-style', 'italic').css('font-weight', 'normal');
+                }else if($('#texte option:selected').val() === "Souligne") {
+                    $('#contenu p').css('text-decoration', 'underline').css('font-style', 'normal').css('font-weight', 'normal');
+                }else{
+                    $('#contenu p').css('text-decoration', 'none').css('font-style', 'normal').css('font-weight', 'normal');
+                }
+            });
+
+        // Changement de police
+            $('#police').change(function(){
+               var optionVal = $('#police option:selected').val();
+               var fontFamily = '"'+ optionVal + '"';
+               $('#contenu p').css('font-family',fontFamily);
+            });
+        // Changement police 1ère phrase
+            $('#police-prem-phrase').change(function(){
+                var optionVal = $('#police-prem-phrase option:selected').val();
+                var fontFamily = '"'+ optionVal + '"';
+                $('#contenu p:first').css('font-family',fontFamily);
+            });
+
+        // Changement du premier caractère de chaque phrase
+            $('#prem-car-phrases').change(function(){
+                var pcp = $('#prem-car-phrases option:selected').val();
+                if(pcp === 'Gras'){
+                    // traitement paragraphe par paragraphe
+                    $('#contenu p').each(function(){
+                        // découpe des phrases avec le ' . ' pour chaque paragraphe
+                        var tableau = $(this).text().split('. ');
+                        // Si le paragraphe ne contient pas de phrase -> pas de traitement
+                        if(tableau.length == 0){}
+                        else{
+                            // Sinon, on traite chaque élément (phrase) du tableau
+                            var tableau2 = $.map(tableau,function(el,ind){
+                                if(el[0] != null){return '<b>' + (el[0]) + '</b>' + el.substr(1) + '. ';}
+                            });
+                            $(this).html(tableau2.join(''));
+                        }
+                    });
+                }
+                if(pcp === 'Normal'){
+                    $('#contenu p').each(function(){
+                        $(this).text($(this).text());
+                    });
+                }
+            });
+
+        // Passage du mot choisi en rouge dans le 1er paragraphe
+            $('#couleurMot').click(function(){
+                var motNb = $('#mot').val();
+                var tableauMot = $('#contenu p:first').text().split(' ');
+                var tableauMot2 = $.map(tableauMot, function(el,ind){
+                    if(ind+1 === parseInt(motNb)){
+                        return ('<span style="color: red;">' + el + '</span>');
+                    }else{return (el)}
+                });
+                $('#contenu p:first').html(tableauMot2.join(' '));
+            });
+        // Changement bordure image
+            $('#bordure-images').change(function(){
+                var imgBordSelect = $('#bordure-images option:selected').val();
+                if(imgBordSelect === 'Rien'){$('img').css('border','none');return}
+                if(imgBordSelect === 'Simple'){$('img').css('border','1px solid blue');return}
+                if(imgBordSelect === 'Double'){$('img').css('border','5px double red');return}
+                $('img').css('border','none');
+            });
+        // Ré-initialisation du formulaire
+            $('#raz').click(function(){
+                location.reload();
+            });
+        //
+        }); // END anonymous function
+    </script>
+    </body>
+</html>
