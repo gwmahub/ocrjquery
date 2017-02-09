@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <title>Title</title>
+</head>
+<body>
+
+<header id="headerbase" class="container"></header>
+
+<div class="container content">
+    <div class="row content">
+        <div class="col-xs-12">
+            <table id="prodsTable" class="table table-responsive">
+                <tbody>
+                <tr>
+                    <th>Région</th>
+                    <th>Dénomination</th>
+                    <th>Appellation</th>
+                    <th>Année</th>
+                    <th>PU</th>
+                    <th>Qté min</th>
+                    <th>Qté commandée</th>
+                </tr>
+                <tr>
+                    <td>Loire</td>
+                    <td>Domaine  Chidaine</td>
+                    <td>Touraine</td>
+                    <td>2015</td>
+                    <td class="priceWine">7,55 €</td>
+                    <td class="qtyMin">6</td>
+                    <td>
+                        <input class="qtyOrdered" type="text" value="" style="width: 25px;height: 25px; padding: 5px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Côtes du Rhône</td>
+                    <td >Château de Nages V. Vignes</td>
+                    <td>Costières de Nimes</td>
+                    <td>2013</td>
+                    <td class="priceWine">8,45 €</td>
+                    <td class="qtyMin">6</td>
+                    <td>
+                        <input class="qtyOrdered" type="text" value="" style="width: 25px;height: 25px; padding: 5px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Alsace</td>
+                    <td>Riesling Stoeffler</td>
+                    <td>Alsace</td>
+                    <td>2013</td>
+                    <td class="priceWine">9,45 €</td>
+                    <td class="qtyMin">6</td>
+                    <td>
+                        <input class="qtyOrdered" type="text" value="" style="width: 25px;height: 25px; padding: 5px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Rhum sec</td>
+                    <td>Trois Rivière Hors d´Age triple millésime</td>
+                    <td>Touraine</td>
+                    <td>&nbsp;</td>
+                    <td class="priceWine">43,70 €</td>
+                    <td class="qtyMin">1</td>
+                    <td>
+                        <input class="qtyOrdered" type="text" value="" style="width: 25px;height: 25px; padding: 5px;" />
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="col-xs-12">
+                <p id="testData"></p>
+                <p style="text-align: right; padding: 15px; margin: 5px;">
+                    Total de la commande : <span id="total" style="color: green; font-size: 20px; font-weight: bolder;"></span>
+                </p>
+            </div>
+
+
+        </div><!-- END col-xs-12 -->
+
+    </div><!--END .row content-->
+</div><!--END .container content -->
+
+<!-- footer_inc.html -->
+<footer id="footerbase" class="container"></footer>
+
+<script src="vendor/jquery/dist/jquery.js"></script>
+<script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script><script src="js/proverbes.js"></script>
+<script src="js/myScript.js"></script>
+<script src="js/includes.js"></script>
+</body>
+</html>

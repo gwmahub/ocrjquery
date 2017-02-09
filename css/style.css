@@ -143,19 +143,27 @@ input[type="button"]:hover:enabled
  Ajax : chat
  */
 
+fieldset {
+    width: 600px;
+    background-color: #ececec;
+    padding: 15px;
+    border: none;
+    margin: 10px auto;
+}
+
+legend{
+    padding-bottom: 50px;
+    border: none;
+}
+
 #conversation {
     margin: 30px auto;
-    width: 300px;
+    width: inherit;
     height: 400px;
     border: black 1px solid;
-    background-color: #efecca;
+    background-color: #fff;
     overflow-x: hidden;
     overflow-y: scroll;
     padding: 5px;
     margin-left: 10px;
-}
-fieldset {
-    width: 330px;
-    background-color: #e6e2af;
-    border: black 1px solid;
 }
