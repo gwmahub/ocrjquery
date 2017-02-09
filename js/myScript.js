@@ -63,7 +63,6 @@ $('#sp1').text(val1);
 $('#sp2').text(val2);
 $('#sp3').text(val3);
 
-
 var myAppendText = ' un complément de contenu inséré avec append() ';
 var myPrependText = ' un complément de contenu inséré avec prepend() ';
 var myBeforeText = ' <hr /> &lt;hr /&gt;&nbsp;before() ';
@@ -142,7 +141,9 @@ $('#testRemoveElements p').remove(':contains("second")');
 
 // TP: Questionnaire interactif en jQuery
 // Mise en forme des blocs
-$('form #formTp1').each($('div.question').wrapAll('div').addClass('row bg-success').css('marginBottom','10px'));
+$('.question').each(function(){
+    $(this).addClass('row bg-success').css('marginBottom','10px');
+});
 $('div.texte').addClass('col-xs-10');
 $('div.question img').addClass('pull-right img-responsive').css('marginTop','5%').css('marginRight','2%');
 
@@ -150,46 +151,44 @@ $('div.question img').addClass('pull-right img-responsive').css('marginTop','5%'
 // Cacher les réponses
 $('.reponse').hide();
 // Mise en forme du lien
-var myAnswers = $('#formTp1 a:first');
-myAnswers.wrap('<p class="col-xs-2 text-center alert alert-info"></p>');
+$('#testAnswers').wrap('<p class="col-xs-2 text-center alert alert-info"></p>');
 
-//alert($('#formTp1 input[type="radio"]:first').val());
-// Fonctionnalités au hover 
-myAnswers.hover(
+// Fonctionnalités au hover
+$('#testAnswers').hover(
         //fonction au survol du lien
         function(){
             $('.reponse').fadeIn(500);
             // Q1
             if($(':radio[id="r1"]:checked').val()){
                 $('#reponse1').addClass('text-success');
-                $('#img1').attr('src','img/bon.png');
+                $('#img1').attr('src','assets/bon.png');
             }else{
                 $('#reponse1').addClass('text-danger');
-                $('#img1').attr('src','img/mauvais.png');
+                $('#img1').attr('src','assets/mauvais.png');
             }
             
             //Q2
             if($(':radio[id="r4"]:checked').val()){
                 $('#reponse2').addClass('text-success');
-                $('#img2').attr('src','img/bon.png');
+                $('#img2').attr('src','assets/bon.png');
             }else{
                 $('#reponse2').addClass('text-danger');
-                $('#img2').attr('src','img/mauvais.png');
+                $('#img2').attr('src','assets/mauvais.png');
             }
             
             //Q3
             if($(':radio[id="r8"]:checked').val()){
                 $('#reponse3').addClass('text-success');
-                $('#img3').attr('src','img/bon.png');
+                $('#img3').attr('src','assets/bon.png');
             }else{
                 $('#reponse3').addClass('text-danger');
-                $('#img3').attr('src','img/mauvais.png');
+                $('#img3').attr('src','assets/mauvais.png');
             }        
         },
         //fonction après le survol du lien
         function(){
             $('.reponse').fadeOut(250);
-            $('.imgResponse').attr('src','img/question.png');
+            $('.imgResponse').attr('src','assets/question.png');
         }
         
 );
