@@ -558,165 +558,18 @@ $(function(){
    
    bis();
 });
-/*
-$(function(){
-    var blocTabSquareCol_div = $('#blocTabSquareCol td > div');
-    blocTabSquareCol_div.each(index, element, function(){
-        alert(typeof(index));
-    });
-    
-});*/
 
-
-/*
-=========================================================================
-                            TP 2: Mise en forme d'1 page web
-=========================================================================
-*/
-$('#contenu'); // div
-$('#couleur-fond'); // select
-$('#texte'); // select
-$('#police'); // select
-$('#police-prem-phrase'); // select
-$('#prem-car-phrases'); // select
-$('mot'); // input text
-$('#couleurMot'); // button
-
-$(function(){
-    //Modification de la couleur de fond en utilisant la valeur qui se trouve dans l'attribut « value »
-    // de la balise <option> choisie.
-    $('#couleur-fond').change(function(){
-        var newBgColor = $('#couleur-fond option:selected').val();
-        $('#contenu').css('background-color',newBgColor);
-    });
-    //Modification de l'attribut de tout le texte
-    $('#texte').change(function(){
-        var newFontStyle = $('#texte option:selected').val();
-        //alert(newFontStyle); ok
-            if(newFontStyle === "Souligne"){
-                $('#contenu p').css('text-decoration', 'underline').css('font-weight', 'normal').css('font-style', 'normal');
-            }else if(newFontStyle === "Gras"){
-                $('#contenu p').css('font-weight', 'bold').css('font-style', 'normal').css('text-decoration', 'none');
-            }else if(newFontStyle === "Italique"){
-                $('#contenu p').css('font-style', 'italic').css('font-weight', 'normal').css('text-decoration', 'none');
-            }else{
-                $('#contenu p').css('font-weight', 'normal').css('font-style', 'normal').css('text-decoration', 'none');
-            }
-    });
-    
-    //Modification de la police de tout le texte
-    $('#police').change(function(){
-        var newPol = '"' + $('#police option:selected').val() + '"';
-        //alert(newPol);
-        $('#contenu p').css('font-family', newPol);
-    });
-    
-    //Modification de la police de la première phrase
-    $('#police-prem-phrase').change(function(){
-        var newPol = '"' + $('#police-prem-phrase option:selected').val() + '"';
-        //alert(newPol);
-        $('#contenu p:first').css('font-family', newPol);
-    });
-    
-//Modification des caractéristiques du premier caractère de chaque mot
-/*    function capitaliseFirstLetters(s){
-        return s.split(" ").map(function(w){ 
-            return w.charAt(0).toUpperCase() + w.substr(1);
-        }).join(" ");
-    }
-*/
-
-    function changeFirstLetters(str){
-        return str.split(" ").map(function(w){
-            return w.charAt(0).toUpperCase() + w.slice(1);
-        }).join(" ");
-    }
-       
-    $('#prem-car-phrases').change(function(){
-        var pcp    = $('#prem-car-phrases option:selected').val();
-        if(pcp === "Gras"){
-            // chaque para est coupé au .
-            // chaque element du tableau ainsi formé contenant des phrase voit sa 1ere lettre transformée en lettre capitale
-            $('#contenu p').each(function(){
-                var tableau = $(this).text().split(". ");
-                if(tableau.length === 1){}
-                else{
-                    var tableau2 = $.map(tableau, function(elem, i){
-                        if(elem[0] != null){ // !== pose problème
-                            return '<span class="bg-alert">' + (elem[0]) + '</span>' + elem.substring(1) + '. ';
-                        }
-                    });
-                    $(this).html(tableau2.join(''));
-                }
-                });
-        }
-        if(pcp === "Normal"){
-            $('#contenu p').each(function(){
-                var unPar = $(this).html();
-                if(unPar.indexOf('<img') == -1){// si indexOf ne trouve pas '<img
-                    $(this).html($(this).text());
-                }
-            });
-        }
-    });
-
-//Écriture en caractères rouges du mot spécifié dans le premier paragraphe. 
-//Par exemple, si l'utilisateur tape « 10 » dans la zone de texte, le dixième mot du premier paragraphe
-//doit apparaître en caractères rouges
-
-    
-    $('#couleurMot').click(function(){
-        var wordIdx     = $('#mot').val(); // valeur de l'input
-        var wordsTab    = $('#contenu p:first').text().split(' ');//creation du tableau contenant les mots du 1er paragraphe
-        // recherche du mot et mise en couleur
-        var wordsTab2   = $.map(wordsTab, function(elem, idx){
-            if(wordIdx == idx+1){// == car string et number / idx+1 car commence à 0
-                return "<span class='bg-success'><b>" + elem + "</b></span>";
-            }else{
-                return elem;
-            }
-        });
-       $('#contenu p:first').html(wordsTab2.join(' '));
-    });
-});
-
-
-// Affecter une bordure aux images.
-
-$('#bordure-images');
-$('#contenu img').css('border', '4px solid transparent').css('margin','30px');
-
-$('#bordure-images').change(function(){
-    var selectedBordure = $('#bordure-images option:selected').val();
-    if(selectedBordure == "Double"){
-        $('#contenu img').css('border', '4px double #000');
-    }else if(selectedBordure == "Simple"){
-         $('#contenu img').css('border', '2px solid #000');
-    }else{
-        $('#contenu img').css('border', 'none');
-    }
-});
-
-//Remise à zéro du formulaire
-$('#raz').click(function(){
-   return location.reload(); 
-});
-
-// #testData
-// .priceWine
-// .qtyMin
-// .qtyOrdered
-// #total
-// 
-// récupération des input qtyOrdered 
-// key up dans .qtyOrdered
-// dans span #total -> insérer le résultat du calcul (qtyOrdered*qtyMin)*priceWine
-
-
-
+/**
+ * ORDER FORM
+ * @description the user insert the quantity in the field and the script calculate the amount like : (unit price x minimum qty) x user qty and display the total amount
+ * @param unitPrices
+ * @param qtymins
+ * @param qtyOrders
+ * @returns {string}
+ */
 function getTotal(unitPrices, qtymins, qtyOrders){
     //transformation en variable js
-    var unitPriceAr = unitPrices,qtyminAr = qtymins, qtyOrderAr = qtyOrders;
+    var unitPriceAr = unitPrices, qtyminAr = qtymins, qtyOrderAr = qtyOrders;
     var total=0;
     for(var i=0, j=0, k=0;i<unitPriceAr.length,j<qtyminAr.length,k<qtyOrderAr.length;i++,j++,k++){
         unitPriceAr[i] = parseFloat(unitPriceAr[i].innerHTML.replace(",","."));
@@ -734,13 +587,16 @@ function getTotal(unitPrices, qtymins, qtyOrders){
     return total.toFixed(2).replace(".",",");
 }
     
-
 $('.qtyOrdered').val(function(){return 0;});
     
 $('.qtyOrdered').on(
         {keyup: function(){
             $('#total').text( getTotal($('.priceWine'), $('.qtyMin'), $('.qtyOrdered')) + " €");
         }
+    });
+
+$('#resetOrderForm').click(function(){
+    location.reload();
 });
 
 
